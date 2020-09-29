@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Responsive Side Menu</title>
+  <script src="indexv5v1.js"></script> 
+  <link rel="stylesheet" href="indexfinal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+<body>
+   <!--header of the page--> 
+  <div class="headder">
+    <div class="logo">
+        <h1>Name</h1> 
+    </div>
+  </div>
+  <!--side navbar-->
+  <nav id="navbar">
+      <!---open symbol-->
+    <span class="open-slide">
+      <a  onclick="openSlideMenu()">
+        <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+        </svg>
+      </a>
+    </span>
+    <!--main memu-->
+    <ul id="navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <!---side menu-->
+  <div id="side-menu" class="side-nav">
+    <a class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="#">Introduction</a>
+    <a href="#">Big O notation</a>
+    <a href="#">Arrays</a>
+    <a href="#">ArrayLists</a>
+    <a href="#">Stack</a>
+    <a href="#">Queue</a>
+    <a href="#">Maps</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">zzz</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">zzz</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">ASDF</a>
+    <a href="#">zzz</a>
+</div>
+<!--content of the page-->
+  <section class="center">
+    <div class="container">
+        <div class="content">
+            <h3>Data Structures and Algorithms</h3>
+            <p>In this <mark >tutoral</mark> you are going to learn about <mark>Data Structures concepts effectively</mark>  with examples 
+              This course will be a <mark>general overview</mark> of data structures and so we won’t be confining ourselves to one specific language</p>
+
+        </div>
+       
+        <div class="content">
+            <h4>what exactly is a data structure?</h4>
+            <p>Well in Computer Science, a data structure is a way to <mark>store, organize, and manage data -or information</mark>  in a way that allows you the programmer to easily access or modify the values within them. </p>
+          </div>
+        <div class="content">
+            <h4>Types of Data Structures</h4>
+            <ol>
+              <li>Arrays</li>
+              <li>ArrayLists</li>
+              <li>Stack</li>
+              <li>Queue</li>
+              <li>Maps</li>
+            </ol>
+            
+        </div>
+        <div class="content">
+          <h4>Which data structure we have to choose for a problem?</h4>
+          <p>So the most common functions you might want from a data structure. Are  The ability to <mark>access </mark>a specific element within the data structure, <mark>search</mark> for a particular element within the data structure, <mark> insert</mark>an element into the data structure, and <mark>remove</mark> an element from the data structure. 
+            Now <mark>all datastructures</mark>  provide these features in different ways,But which data structure is useful for your problem is depend upon <mark> problem or user requrements </mark>as well as <mark>effeciency or perfamence </mark> datastructure for example, we might choose a data structure which can access elements the quickest. Vice versa, if accessing elements isn’t the most important thing to us, but we need a data structure which can be easily added to and deleted from, we would go for one which is most efficient in that specific functionality.</p>
+      </div>
+      <div class="content">
+        <h4>Effeciency of a datastructure?</h4>
+        <p>The efficiency of an algorithm depends upon its time complexity and space complexity </p>
+        <p>For finding efficiency we use Big O notation</p>
+      </div>
+        <div id="wrapper">
+            <div id="stickybtn">
+                <i class="fa fa-chevron-circle-left" style="font-size:30px"></i>Back
+            </div>
+        </div>
+        <div class="nextbtnclass">
+            <div id="nextbtnid">
+                Next<i class="fa fa-chevron-circle-right" style="font-size:30px"></i>
+            </div>
+        </div>
+    </div>
+    </section>
+
+<!--script for side menu-->
+  <script>
+    function closeSlideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+      document.getElementById('main').style.marginLeft = '0';
+    }
+    function openSlideMenu(){
+      document.getElementById('side-menu').style.width = '200px';
+      document.getElementById('main').style.marginLeft = '250px';
+    }
+  </script>
+<!--script for sticky main menu--> 
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+</script>
+
+
+    
+</body>
+</html>
